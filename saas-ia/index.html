@@ -1,139 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IA SERPROFES</title>
-
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("https://i.pinimg.com/1200x/5b/58/34/5b583445fcd2988d0f56eb69b03250d1.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-
-  .contenedor {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
-    text-align: center;
-  }
-
-  h1 {
-    margin-bottom: 10px;
-  }
-
-  h2 {
-    margin-top: 30px;
-    color: #333;
-  }
-
-  ul {
-    text-align: left;
-    margin: 20px auto;
-    max-width: 500px;
-  }
-
-  li {
-    margin-bottom: 10px;
-  }
-
-  a {
-    display: inline-block;
-    margin: 5px 0 15px;
-    color: #2575fc;
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .imagenes {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-  }
-
-  .imagenes img {
-    width: 250px;
-    border-radius: 10px;
-  }
-
-  input {
-    width: 70%;
-    padding: 12px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    margin: 10px 0;
-    outline: none;
-  }
-
-  .btn-ia {
-    background: #0f172a;
-    color: #00f7ff;
-    border: 2px solid #00f7ff;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .btn-ia:hover {
-    background: #00f7ff;
-    color: #0f172a;
-    box-shadow: 0px 0px 15px #00f7ff;
-  }
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi IA Saas - Panel de control</title>
 </head>
 
+
 <body>
+  <div class="app-container">
+      <aside class="sidebar">
+        <div class="logo-area">
+          <h2>IA MASTER</h2>
+        </div>
+        <nav class="menu-lateral">
+          <button>+ Nuevo Chat</button>
+        <div class="historial">
+          <p>Historia Reciente ...</p>
+          <ul>
+            <li>¿Cómo hacer dieta?</li>
+            <li>Recetas sanas</li>
+          </ul>
+        </div>
+      </nav>
+      <div class="perfil">
+        <span>Usuario Pro</span>
+      </div>
+    </aside>
 
-<div class="contenedor">
+    <main class="chat-area">
 
-<h1>IA SERPROFES</h1>
+      <header class="chat-area-header">
+        <h3>Conversacion Actual</h3>
+      </header>
 
-<h2>¿Qué puede hacer mi asistente IA por ti?</h2>
+      <section class="mensaje-container">
+        <div class="mensaje-ia">¡Hola! ¿En que te puedo ayudar?</div>
+      </section>
 
-<ul>
-  <li>Generar rutinas cada 15 minutos personalizados</li>
-  <a href="https://www.youtube.com/watch?v=I4gb324-wHU" target="_blank">Ver ejemplo</a>
-
-  <li>Calcular tus calorías diarias automáticamente</li>
-  <a href="https://www.youtube.com/watch?v=h5OqklgYJCA" target="_blank">Ver ejemplo</a>
-
-  <li>Avisarte cuándo beber agua durante el día</li>
-  <a href="https://www.youtube.com/shorts/PVruHA5Oty0" target="_blank">Ver ejemplo</a>
-</ul>
-
-<div class="imagenes">
-  <img src="robotcito.jpeg" alt="robot IA">
-  <img src="https://www.luabooks.com/cdn/shop/articles/00_robots.jpg?v=1728516512" alt="robot IA">
-</div>
-
-<a href="https://github.com/danielapaz11" target="_blank">
-Visita mi GitHub
-</a>
-
-<h2>Habla con la IA</h2>
-
-<form>
-  <input type="text" placeholder="Ej: Eres experto en programación...">
-  <br>
-  <button class="btn-ia" type="button">Enviar a IA</button>
-</form>
-
-</div>
-
+      <footer class="input-area">
+        <form class="chat-form">
+          <input type="text" placeholder="Escribe tu pregunta aqui ...">
+          <button type="submit">Enviar</button>
+        </form>
+      </footer>
+    </main>
+  </div>
 </body>
+
 </html>

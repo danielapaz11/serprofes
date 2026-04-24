@@ -78,3 +78,11 @@ body{
     background-color: rgb(54, 86, 86);
     color: white;
 }
+
+.tarjeta button:hover{
+    background-color:cadetblue;
+}
+
+.tarjeta .btn-destacado:hover{
+    background-color: aquamarine;
+}

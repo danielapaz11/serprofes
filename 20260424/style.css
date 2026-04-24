@@ -1,0 +1,44 @@
+/* AGREGANDO ESTILOS A LAS TARJETAS */
+/* 1. RESETEO BASICO */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ 
+body{
+    background-color: #f0f2f5;
+    padding: 50px;
+}
+ 
+/* 2. RESETEO FLEXBOX */
+.contenedor-tarjetas{
+    display: flex; /*Tarjetas alineadas horizontalmente*/
+    justify-content: center; /*Tarjetas centren de la pantalla*/
+    gap: 40px; /*Separación perfecta entre tarjeta y tarjeta*/
+    margin-top: 40px;
+}
+ 
+/* DISEÑO BASE DE LA TARJETA */
+.tarjeta{
+    background-color: white;
+    width: 320px;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /*Sombra de la caja*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;/*Si cambia de pocision o sombra que sea suavemente*/
+
+}
+
+/* 4. EL EFECTO WOW */
+
+.tarjeta:hover{
+    /* Al pasar el raton la tarjeta flota 10px hacia arriba */
+    transform: translate(-10px);
+    /* La sombra se hace mas grande y oscura */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
+
+}

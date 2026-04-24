@@ -42,3 +42,39 @@ body{
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
 
 }
+
+.tarjeta h3{
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.precio{
+    font-size: 35px;
+    font-weight: bold;
+    color: #374832;
+    margin-bottom: 20px;
+}
+
+.tarjeta p{
+    color: #374832;
+    margin-bottom: 30px;
+    line-height: 1.6;/*Interlineado 1.6 veces el tamaño de la letra*/
+}
+
+.tarjeta button{
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ecf0f1;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /*Transicion suave de color*/
+}
+
+.tarjeta .btn-destacado{
+    background-color: rgb(54, 86, 86);
+    color: white;
+}

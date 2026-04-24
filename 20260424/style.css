@@ -75,7 +75,7 @@ body{
 }
 
 .tarjeta .btn-destacado{
-    background-color: rgb(54, 86, 86);
+    background-color: rgb(118, 145, 145);
     color: white;
 }
 
@@ -85,4 +85,9 @@ body{
 
 .tarjeta .btn-destacado:hover{
     background-color: aquamarine;
+}
+
+.tarjeta .btn-destacado-pre{
+    background-color: rgb(54, 86, 90);
+    color: white;
 }

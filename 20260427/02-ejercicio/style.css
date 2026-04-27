@@ -1,0 +1,25 @@
+/* SOLUCION: GALERIA GRID REPETITIVO*/
+
+.gallery{
+    display: grid;
+    /* 3 COLUMNAS DEL MISMMO TAMAÑO */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /*Es la separacion*/
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.thumb {
+    /* Obliga a que todas las imagenes tengan el mismo tamaño */
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+}
+
+.thumb :hover {
+    transform: scale(1.05);/*Efecto zoom*/
+    box-shadow: 0 0 15px rgba (255, 255, 255, 0.2);
+}

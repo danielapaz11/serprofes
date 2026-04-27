@@ -1,0 +1,115 @@
+/*CONFIGURACION GENERAL*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul{
+    list-style: none; /*Borra Viñetas*/
+    
+}
+
+a{
+    text-decoration: none;/*Elimina el subrayado de los enlaces*/
+    color: aliceblue; /*Cambia de color los enlaces*/
+}
+
+/*LA MAGIA DEL CSS GRID BODY*/
+
+body {
+    height: 100vh;/*Ocupa toda la pantalla*/
+    /*1. Activamos grid*/
+    display: grid; 
+
+    /*2. Definimos las columnas 
+    Nav de 250px y el main el resto 1fr */
+    grid-template-columns: 250px 1fr;
+
+    /*3. Definimos las filas(Header 60px, Main flexible 1f, footer de 60px)*/
+    grid-template-rows: 60px 1fr 60px;
+
+    /*Dibujamos el mapa TETRIS*/
+    grid-template-areas: 
+                        "header header"
+                        "nav main"
+                        "footer footer";
+
+    background-color: rgb(29, 28, 28);
+
+
+}
+
+/*ASIGNAMOS CADA CAJA A SU ZONA DEL MAPA*/
+header{
+
+    grid-area: header; /*Le decimos que vaya a la zona header*/
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+nav{
+    grid-area: nav;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+main{
+ 
+    grid-area: main;
+    background-color: #ffff;
+    padding: 30px;
+    
+}
+
+footer{
+
+    grid-area: footer; /*Le decimos que vaya a la zona header*/
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery{
+    display: grid;
+    /* 3 COLUMNAS DEL MISMMO TAMAÑO */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /*Es la separacion*/
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.thumb {
+    /* Obliga a que todas las imagenes tengan el mismo tamaño */
+    height: 250px;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: grid;
+    /* 3 COLUMNAS DEL MISMMO TAMAÑO */
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    
+    
+
+}
+
+.thumb :hover {
+    transform: scale(1.05);/*Efecto zoom*/
+    box-shadow: 0 0 15px rgba (255, 255, 255, 0.2);
+}
+
+
+   

@@ -110,6 +110,7 @@ footer{
     height: auto;
     max-width: 100%;
     box-shadow: 0 10px 20px rgba(0 , 0, 0, 0.5);
+
     
     
 }
@@ -129,4 +130,26 @@ p{
     padding: 15px;
     color: black;
     text-align: center;
+    font-size: large;
+}
+
+.piepag {
+    color: aliceblue;
+}
+
+nav li{
+    margin-bottom: 15px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+nav a:hover{
+    background: #353333;
+    border-radius: 3px;
+    transform: scale(1.05);/*Efecto zoom*/
 }

@@ -102,16 +102,24 @@ footer{
     /* 3 COLUMNAS DEL MISMMO TAMAÑO */
     grid-template-columns: repeat(3, 1fr);
 
-    
-    
-
 }
+
+.thumb1 {
+
+    border-radius:20px;
+    padding:10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .thumb img {
     height: auto;
     max-width: 100%;
-    box-shadow: 0 10px 20px rgba(0 , 0, 0, 0.5);
-
-    
+    box-shadow: 0 10px 20px rgba(0 , 0, 0, 0.5); 
     
 }
 
@@ -123,7 +131,7 @@ footer{
 h2{
     text-align: center;
     color: aliceblue;
-    padding: 30px;
+    padding: 20px;
 }
    
 p{

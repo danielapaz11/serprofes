@@ -64,7 +64,7 @@ nav{
 main{
  
     grid-area: main;
-    background-color: #ffff;
+    background-color: #353333;
     padding: 30px;
     
 }
@@ -90,20 +90,28 @@ footer{
 
 .thumb {
     /* Obliga a que todas las imagenes tengan el mismo tamaño */
-    height: 250px;
-    overflow: hidden;
-    border-radius: 16px;
+    background-color: aliceblue;
+    border-radius: 12px;
+    padding:30px;
     transition: transform 0.3s ease;
     cursor: pointer;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /* 3 COLUMNAS DEL MISMMO TAMAÑO */
     grid-template-columns: repeat(3, 1fr);
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+
     
     
 
+}
+.thumb img {
+    height: auto;
+    max-width: 100%;
+    box-shadow: 0 10px 20px rgba(0 , 0, 0, 0.5);
+    
+    
 }
 
 .thumb :hover {
@@ -111,5 +119,14 @@ footer{
     box-shadow: 0 0 15px rgba (255, 255, 255, 0.2);
 }
 
-
+h2{
+    text-align: center;
+    color: aliceblue;
+    padding: 30px;
+}
    
+p{
+    padding: 15px;
+    color: black;
+    text-align: center;
+}

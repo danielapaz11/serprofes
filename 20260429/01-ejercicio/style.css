@@ -1,0 +1,95 @@
+/* 1. RESETEO WEB */
+
+*{
+    margin: 0; /*Quita las margenes*/
+    padding: 0; /*Sin relleno*/
+    box-sizing: border-box; /*Para que se adapte a la pantalla*/
+    font-family: sans-serif;
+}
+
+body{
+    /* Efecto Wow 1: Fondo degrado */
+    background: linear-gradient(135deg, #38f9d7 0%, #d209cf 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 2. Tarjeta blanca flotante */
+
+.form-container{
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    width: 450px; /*Ancho fijo para elordenador*/
+    text-align: center;
+}
+
+.form-container h2{
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-container p{
+    margin-bottom: 25px;
+    color: #666;
+}
+
+/* Maquetacion de inputs - (elimina los bordes feos) */
+
+.input-group{
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /*Convertir en bloque*/
+    color: #555;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    outline: none;/*Quita el borde azul nativo*/
+    transition: 0.3s;
+}
+
+.input-group input:focus{
+    border-color: #c879c6;
+}
+
+.btn-enviar{
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #b0e7dd 0%, #d9a0d7 100%);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover{
+    transform: scale(1.05);/*Efecto zoom*/
+    background: #391138;
+    color: white;
+}
+
+/* 2. El secreto resposive designe (Moviles)*/
+@media(max-width:500px){
+    .form-container{
+        width: 100%; /*Ocupa todo el ancho disponible del mobile*/
+        padding: 20px;/*Reduce los margenes internos*/
+    }
+
+    body {
+        background: #f3d0f2; /*Quitamos el efecto degradado para mejorar el rendimiento*/
+    }
+}

@@ -1,0 +1,22 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background-color: rgb(29,28,28);
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}

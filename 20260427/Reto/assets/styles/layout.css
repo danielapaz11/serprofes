@@ -1,0 +1,35 @@
+.layout-grid{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr 60px;
+
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+    text-align: center;
+}
+
+/* AREAS */
+header{ grid-area: header; }
+nav{ grid-area: nav; }
+main{ grid-area: main; }
+footer{ grid-area: footer; }
+
+/* ESTILOS BASE DEL LAYOUT */
+header, footer{
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    background: black;
+    padding: 20px;
+}
+
+main{
+    background: #353333;
+    padding: 30px;
+}

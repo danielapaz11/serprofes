@@ -2,47 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reto Velazquez</title>
-  <link rel="stylesheet" href="assets/styles/style.css" />
-</head>
-<body>
-  <header>
-<div class="marquee">
-  <h1>BIENVENIDO A NUESTRO MUSEO</h1>
-</div>
 
-    
+  <!-- CSS en orden correcto -->
+  <link rel="stylesheet" href="assets/styles/base.css">
+  <link rel="stylesheet" href="assets/styles/layout.css">
+  <link rel="stylesheet" href="assets/styles/components.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
+</head>
+
+<body class="layout-grid">
+
+  <header>
+    <div class="marquee">
+      <h1>BIENVENIDO A NUESTRO MUSEO</h1>
+    </div>
   </header>
 
   <nav>
     <ul>
-      <li><a class="nav-button" href="index.html">INICIO</a></li>
-      <li><a class="nav-button" href="goya.html">GOYA</a></li>
-      <li><a class="nav-button" href="greco.html">GRECO</a></li>
-      <li><a class="nav-button" href="rubens.html">RUBENS</a></li>
-      <li><a class="nav-button" href="velazquez.html">VELAZQUEZ</a></li>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="goya.html">GOYA</a></li>
+      <li><a href="greco.html">GRECO</a></li>
+      <li><a href="rubens.html">RUBENS</a></li>
+      <li><a href="velazquez.html">VELAZQUEZ</a></li>
     </ul>
   </nav>
 
   <main>
     <article>
       <h2>NUESTRAS OBRAS</h2>
-      
-      <nav>
+
       <section class="video-container">
-      <div class="thumb1">
-      <a href="https://www.youtube.com/watch?v=KEo5cRnvH-Y" target="_blank">
-        <img src="assets/images/museo.jpg" alt="Nuestro museo" loading="lazy">
-      </a>
-      </div>
+        <div class="thumb1">
+          <a href="https://www.youtube.com/watch?v=KEo5cRnvH-Y" target="_blank">
+            <img src="assets/images/museo.jpg" alt="Nuestro museo" loading="lazy">
+          </a>
+        </div>
       </section>
-      </nav>
+
     </article>
   </main>
 
   <footer>
     <p class="piepag">&copy; 2026 Bootcamp Fullstack. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>

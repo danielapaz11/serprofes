@@ -115,6 +115,11 @@ footer{
     align-items: center;
     flex-direction: column;
 }
+.thumb1 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 
 .thumb img {
     height: auto;
@@ -123,7 +128,7 @@ footer{
     
 }
 
-.thumb :hover {
+.thumb:hover {
     transform: scale(1.05);/*Efecto zoom*/
     box-shadow: 0 0 15px rgba (255, 255, 255, 0.2);
 }
@@ -149,15 +154,118 @@ nav li{
     margin-bottom: 15px;
 }
 
-nav a{
+body > nav a{
     color: white;
     text-decoration: none;
     padding: 5px;
     display: block;
 }
 
-nav a:hover{
+body > nav a:hover{
     background: #353333;
     border-radius: 3px;
     transform: scale(1.05);/*Efecto zoom*/
+}
+
+.layout-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+}
+
+.marquee {
+    overflow: hidden; /* oculta lo que se sale */
+    white-space: nowrap;
+    background-color: black;
+}
+
+.marquee h1 {
+    display: inline-block;
+    padding-left: 100%; /* empieza fuera de pantalla */
+    animation: moverTexto 10s linear infinite;
+}
+
+/* ANIMACIÓN */
+@keyframes moverTexto {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+
+    body > nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav li {
+        margin-bottom: 0;
+    }
+
+    body > nav a {
+        background: #353333;
+        padding: 8px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+    .layout-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .thumb1 img {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }

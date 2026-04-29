@@ -48,7 +48,7 @@
 .chat-header{
     padding: 15px;
     border-bottom: 1px solid #4d4d4f;
-    color: antiquewhite;
+    color: white;
     text-align: center;
 }
 
@@ -85,16 +85,64 @@
 .chat-form input{
     flex-grow: 1;
     background: transparent;
+    color: white;
+    border: none;
     padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
 }
 
 .chat-form button{
-    background-color: #40414f;
+    background-color: #09a65d;
     color: white;
     border: none;
-    padding: 7px 15px;
+    padding: 5px 15px;
     border-radius:  5px;
     cursor: pointer;
+}
+
+/*Adaptando el chat a moviles*/
+
+@media (max-width: 768px) {
+/* Ocultamos el menu lateral*/
+    .sidebar{
+        display: none;
+    }
+/* Damos mas escacion al texto del chat */
+    .mensaje-container{
+        padding: 20px;
+    }
+
+     /* Ajustamos el formulario para que quepa bien en pantalla */
+
+    .input-area{
+        padding: 15px;
+    }
+
+    .chat-form {
+        flex-direction: row;
+        padding: 5px;
+    }
+
+    .chat-form input{
+        font-size: 0.9rem; /*Letra mas pequeña*/
+    }
+
+    .chat-form button{
+        padding: 8px 12px; /*Boton mas compacto*/
+    }
+   
+}
+
+@media (max-width: 480px) {
+
+    .chat-headerh3{
+        font-size: 1.1rem;/*Achicamos el titulo superior*/
+    }
+
+    .mensaje-ia{
+        font-size: 0.95rem;/*Ajustamos el texto de la IA para que no se vea gigante*/
+    }
+
 }

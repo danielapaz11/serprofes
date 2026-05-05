@@ -12,13 +12,17 @@
 <body>
     <div class="card">
         <h2>CALCULADORA DE DESCUENTOS</h2>
+        <br>
         <label> Precio Original(€):</label>
+        <input type="number" id="precio" placeholder="Ej. 100">
         <br>
         <label>Descuento(%):</label>
+        <input type="number" id="descuento" placeholder="Ej. 20">
         <br>
         <!-- El evento Onclick llama a nuestra funcion en JS -->
          <button onclick="calcularpreciofinal()">Calcular precio final</button>
-         <p>El precio final es:</p>
+         <br>
+         <p class="textoprecio">El precio final es:</p>
          <p class="resultado" id="texto-resultado">0.00€</p>
         
     </div>

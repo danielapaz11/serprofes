@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    text-align: center;
+    padding: 200px;
+}
+
+.ficha{
+
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.5);
+
+}
+
+img{
+    max-width: 300px;
+}
+
+p {
+    padding: 20px;
+    text-align: center;
+    color: rgb(71, 69, 69);
+    text
+}
+
+.price{
+    padding: 20px;
+    font-size: 30px;
+    color: rgb(201, 48, 48);
+}
+
+button {
+
+    padding: 15px 60px;
+    font-size: 20px;
+    background: rgb(53, 154, 237);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}

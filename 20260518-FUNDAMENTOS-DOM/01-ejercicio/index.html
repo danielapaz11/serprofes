@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia - Commponentes DOM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer ></script>
+</head>
+<body>
+    <header class="top-bar">
+        <label class="switch-container">
+            <input type="checkbox" id="themeToggle">
+            <span class="switch-text">Activar Modo Oscuro</span>
+        </label>
+    </header>
+<main class="contenedor-principal">
+    <!--Contador de Clicks-->
+    <section class="Card">
+        <h2>1. Panel de Metricas</h2>
+        <button id="countBtn" class="btn btn-primary">Registrar Click</button>
+        <p class="resultado">Interacciones: <span id="count" class="badge"></span></p>
+    </section>
+    <!-- Menu Toggle -->
+     <section class="card">
+        <h2>2. Navegacion Oculta</h2>
+        <button id="toggleManu" class="btn btn-secundary">Mostrar Menu</button>
+        <!-- la clase oculto mantendra esto invisible inicialmente -->
+         <nav id="mainNav" class="oculto menu-desplegable">
+            <ul>
+                <li><a href="#">Pamel de Control</a></li>
+                <li><a href="#">Ajustes de Cuenta</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+         </nav>
+     </section>
+</main>
+</body>
+</html>

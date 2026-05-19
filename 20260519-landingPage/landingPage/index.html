@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFree Academy | Aprende Desarrollo Web Gratis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles & Animations -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #f8fafc; /* slate-50 */
+            overflow-x: hidden;
+        }
+
+        /* Infinite Marquee Animation */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: scroll 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Blob Animations for Hero */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="selection:bg-cyan-500/30 relative">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center max-w-7xl">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <i data-lucide="code-2" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
+                    DevFree<span class="text-cyan-400">Academy</span>
+                </span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#inicio" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Inicio</a>
+                <a href="#cursos" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Cursos</a>
+                <a href="#certificados" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Certificados</a>
+                <a href="#plataformas" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Plataformas</a>
+                <button class="px-6 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-medium transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+                    Empezar Gratis
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300">
+                <i id="menu-icon" data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-b border-white/10 flex-col items-center py-6 gap-4 shadow-2xl">
+            <a href="#inicio" class="text-slate-300 mobile-link">Inicio</a>
+            <a href="#cursos" class="text-slate-300 mobile-link">Cursos</a>
+            <a href="#plataformas" class="text-slate-300 mobile-link">Plataformas</a>
+            <button class="mt-4 px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium">
+                Empezar Gratis
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Background Animated Blobs -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-32 left-1/2 w-96 h-96 bg-purple-600/20 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob animation-delay-4000"></div>
+
+            <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Text Content -->
+                    <div class="flex flex-col items-start text-left space-y-8">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                            </span>
+                            +50.000 estudiantes aprendiendo
+                        </div>
+                        
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                            Aprende Desarrollo Web <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
+                                Gratis y Obtén Certificados
+                            </span>
+                        </h1>
+                        
+                        <p class="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed">
+                            Descubre las mejores plataformas del mundo para estudiar programación, desarrollo web y tecnologías modernas sin pagar un solo euro.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                            <button class="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all hover:-translate-y-1">
+                                Explorar Cursos <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                            <button class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                                Ver Certificados
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image/Illustration -->
+                    <div class="relative hidden lg:block">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-blue-500/10 rounded-[2rem] transform rotate-3 scale-105 backdrop-blur-3xl border border-white/5"></div>
+                        <div class="relative bg-slate-800/50 backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] shadow-2xl overflow-hidden">
+                            <!-- Fake IDE Header -->
+                            <div class="flex items-center gap-2 mb-6 border-b border-white/10 pb-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="ml-4 text-xs font-mono text-slate-400">app.jsx — DevFree</span>
+                            </div>
+                            <!-- Fake Code -->
+                            <div class="font-mono text-sm space-y-4">
+                                <p><span class="text-purple-400">import</span> <span class="text-cyan-300">React</span> <span class="text-purple-400">from</span> <span class="text-green-300">'react'</span>;</p>
+                                <p><span class="text-purple-400">const</span> <span class="text-blue-400">StudentSuccess</span> <span class="text-cyan-400">=</span> () <span class="text-cyan-400">=&gt;</span> {</p>
+                                <p class="ml-4"><span class="text-purple-400">const</span> [skills, setSkills] = <span class="text-cyan-300">useState</span>([<span class="text-green-300">'React'</span>, <span class="text-green-300">'Node'</span>]);</p>
+                                <p class="ml-4 mt-4"><span class="text-purple-400">return</span> (</p>
+                                <p class="ml-8 text-slate-300">&lt;<span class="text-red-400">Future</span> <span class="text-purple-300">status</span>=<span class="text-green-300">"employed"</span>&gt;</p>
+                                <p class="ml-12 text-slate-400">/* Your career starts here */</p>
+                                <p class="ml-8 text-slate-300">&lt;/<span class="text-red-400">Future</span>&gt;</p>
+                                <p class="ml-4">);</p>
+                                <p>};</p>
+                            </div>
+                            
+                            <!-- Floating element -->
+                            <div class="absolute -bottom-6 -right-6 bg-slate-900 border border-white/10 p-4 rounded-xl shadow-2xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s">
+                                <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                                    <i data-lucide="check-circle-2" class="text-green-400 w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Certificado Obtenido</p>
+                                    <p class="text-sm font-bold text-white">Full Stack Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS SECTION -->
+        <section id="cursos" class="py-20 relative z-20">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Benefit 1 -->
+                    <div class="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 backdrop-blur-sm cursor-default">
+                        <div class="w-12 h-12 rounded-lg bg-slate-800/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="award" class="w-6 h-6 text-cyan-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Certificados Oficiales</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Obtén credenciales válidas internacionalmente.</p>
+                    </div>
+                    <!-- Benefit 2 -->
+                    <div class="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 backdrop-blur-sm cursor-default">
+                        <div class="w-12 h-12 rounded-lg bg-slate-800/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Acceso 100% Gratuito</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Sin tarjetas de crédito, sin pagos ocultos. Todo libre.</p>
+                    </div>
+                    <!-- Benefit 3 -->
+                    <div class="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 backdrop-blur-sm cursor-default">
+                        <div class="w-12 h-12 rounded-lg bg-slate-800/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="rocket" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Aprende a tu ritmo</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Plataformas on-demand para estudiar cuando quieras.</p>
+                    </div>
+                    <!-- Benefit 4 -->
+                    <div class="group p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 backdrop-blur-sm cursor-default">
+                        <div class="w-12 h-12 rounded-lg bg-slate-800/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="code-2" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Tecnologías Demandadas</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Aprende lo que las empresas top están buscando hoy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLATFORMS SECTION -->
+        <section id="plataformas" class="py-32 relative">
+            <div class="absolute inset-0 bg-slate-900/50"></div>
+            <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Plataformas Gratuitas con <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Certificación</span></h2>
+                    <p class="text-lg text-slate-400">Hemos recopilado y verificado los mejores ecosistemas de aprendizaje donde puedes formarte profesionalmente a costo cero.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Platform 1 -->
+                    <div class="group relative flex flex-col justify-between bg-slate-800/40 border border-white/10 rounded-3xl p-8 hover:bg-slate-800/60 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)]">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/5 flex items-center justify-center border border-white/5">
+                                    <i data-lucide="terminal" class="w-8 h-8 text-yellow-400"></i>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Gratis
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">freeCodeCamp</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed min-h-[3rem]">Certificados oficiales gratuitos reconocidos internacionalmente.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">HTML</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">CSS</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">JS</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">React</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/30 text-slate-400">+3</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3.5 rounded-xl bg-white/5 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                            Visitar Plataforma <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Platform 2 -->
+                    <div class="group relative flex flex-col justify-between bg-slate-800/40 border border-white/10 rounded-3xl p-8 hover:bg-slate-800/60 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)]">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/5 flex items-center justify-center border border-white/5">
+                                    <i data-lucide="award" class="w-8 h-8 text-red-500"></i>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Gratis
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">CS50x Harvard</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed min-h-[3rem]">Curso legendario de Harvard para aprender ciencias computacionales.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">CS</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">C</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Python</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">SQL</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/30 text-slate-400">+1</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3.5 rounded-xl bg-white/5 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                            Visitar Plataforma <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Platform 3 -->
+                    <div class="group relative flex flex-col justify-between bg-slate-800/40 border border-white/10 rounded-3xl p-8 hover:bg-slate-800/60 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)]">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/5 flex items-center justify-center border border-white/5">
+                                    <i data-lucide="code-2" class="w-8 h-8 text-blue-400"></i>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Gratis
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">CS50P Harvard</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed min-h-[3rem]">Especialización gratuita en Python con certificado oficial de Harvard.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Python</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3.5 rounded-xl bg-white/5 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                            Visitar Plataforma <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Platform 4 -->
+                    <div class="group relative flex flex-col justify-between bg-slate-800/40 border border-white/10 rounded-3xl p-8 hover:bg-slate-800/60 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)]">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/5 flex items-center justify-center border border-white/5">
+                                    <i data-lucide="server" class="w-8 h-8 text-green-400"></i>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Gratis
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Full Stack Open</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed min-h-[3rem]">Programa universitario moderno de desarrollo fullstack de la Univ. de Helsinki.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">React</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Node.js</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">MongoDB</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">TypeScript</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3.5 rounded-xl bg-white/5 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                            Visitar Plataforma <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Platform 5 -->
+                    <div class="group relative flex flex-col justify-between bg-slate-800/40 border border-white/10 rounded-3xl p-8 hover:bg-slate-800/60 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)]">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 flex items-center justify-center border border-white/5">
+                                    <i data-lucide="rocket" class="w-8 h-8 text-orange-400"></i>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Gratis
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">SoloLearn</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed min-h-[3rem]">Aprendizaje interactivo y gamificado ideal para principiantes.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Python</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">JS</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Java</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">SQL</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3.5 rounded-xl bg-white/5 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                            Visitar Plataforma <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Platform 6 -->
+                    <div class="group relative flex flex-col justify-between bg-slate-800/40 border border-white/10 rounded-3xl p-8 hover:bg-slate-800/60 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.15)]">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/5 flex items-center justify-center border border-white/5">
+                                    <i data-lucide="database" class="w-8 h-8 text-cyan-400"></i>
+                                </div>
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                    <i data-lucide="award" class="w-3.5 h-3.5"></i> Gratis
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Simplilearn SkillUp</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed min-h-[3rem]">Capacitación gratuita en tecnologías modernas y computación en la nube.</p>
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Frontend</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Backend</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Cloud</span>
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-700/50 text-slate-300 border border-slate-600/50">Python</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3.5 rounded-xl bg-white/5 hover:bg-cyan-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+                            Visitar Plataforma <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH MARQUEE SECTION -->
+        <section class="py-20 overflow-hidden border-y border-white/5 bg-slate-900/50 relative">
+            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            
+            <div class="text-center mb-10">
+                <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Aprende las tecnologías más demandadas</p>
+            </div>
+
+            <div class="flex w-[200%] animate-marquee">
+                <!-- Group 1 -->
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="monitor" class="w-8 h-8"></i><span class="text-xl font-bold">HTML5</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="sparkles" class="w-8 h-8"></i><span class="text-xl font-bold">CSS3</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="code-2" class="w-8 h-8"></i><span class="text-xl font-bold">JavaScript</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="monitor" class="w-8 h-8"></i><span class="text-xl font-bold">React</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="server" class="w-8 h-8"></i><span class="text-xl font-bold">Node.js</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="terminal" class="w-8 h-8"></i><span class="text-xl font-bold">Python</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="database" class="w-8 h-8"></i><span class="text-xl font-bold">MongoDB</span>
+                </div>
+                
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="monitor" class="w-8 h-8"></i><span class="text-xl font-bold">HTML5</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="sparkles" class="w-8 h-8"></i><span class="text-xl font-bold">CSS3</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="code-2" class="w-8 h-8"></i><span class="text-xl font-bold">JavaScript</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="monitor" class="w-8 h-8"></i><span class="text-xl font-bold">React</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="server" class="w-8 h-8"></i><span class="text-xl font-bold">Node.js</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="terminal" class="w-8 h-8"></i><span class="text-xl font-bold">Python</span>
+                </div>
+                <div class="flex flex-1 items-center justify-center min-w-[200px] gap-3 opacity-50 hover:opacity-100 hover:text-cyan-400 transition-all cursor-pointer">
+                    <i data-lucide="database" class="w-8 h-8"></i><span class="text-xl font-bold">MongoDB</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="certificados" class="py-32 relative">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Historias de <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Éxito</span></h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 relative">
+                        <div class="absolute -top-5 right-8 text-6xl text-cyan-500/20 font-serif">"</div>
+                        <div class="flex text-yellow-500 mb-6 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 mb-8 italic text-sm leading-relaxed">"Gracias a los recursos que encontré aquí y a freeCodeCamp, pasé de ser camarera a conseguir mi primer empleo tech en 8 meses sin gastar nada."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="Laura Martínez" class="w-12 h-12 rounded-full border-2 border-cyan-500/30" loading="lazy" />
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Laura Martínez</h4>
+                                <p class="text-slate-400 text-xs">Frontend Developer en TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 relative">
+                        <div class="absolute -top-5 right-8 text-6xl text-cyan-500/20 font-serif">"</div>
+                        <div class="flex text-yellow-500 mb-6 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 mb-8 italic text-sm leading-relaxed">"El curso CS50 de Harvard cambió mi forma de pensar. Es increíble que educación de esta calidad mundial sea 100% gratuita. Una plataforma brillante."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="Carlos Ruiz" class="w-12 h-12 rounded-full border-2 border-cyan-500/30" loading="lazy" />
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Carlos Ruiz</h4>
+                                <p class="text-slate-400 text-xs">Backend Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 relative">
+                        <div class="absolute -top-5 right-8 text-6xl text-cyan-500/20 font-serif">"</div>
+                        <div class="flex text-yellow-500 mb-6 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 mb-8 italic text-sm leading-relaxed">"Empecé con Python en SoloLearn y luego pasé a certificaciones más avanzadas. Hoy trabajo remoto analizando datos. Todo el camino fue gratis."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="Sofía Chen" class="w-12 h-12 rounded-full border-2 border-cyan-500/30" loading="lazy" />
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Sofía Chen</h4>
+                                <p class="text-slate-400 text-xs">Data Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-slate-900 to-purple-900/40"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-cyan-500/10 blur-[120px] rounded-full"></div>
+            
+            <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+                <h2 class="text-5xl md:text-6xl font-black mb-6 text-white tracking-tight">Empieza hoy tu carrera en <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Tecnología</span></h2>
+                <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Accede gratis a los mejores cursos, obtén certificados profesionales y da el salto al mercado laboral digital.</p>
+                
+                <button class="px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg flex items-center justify-center gap-3 mx-auto hover:scale-105 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)] transition-all duration-300">
+                    Comenzar Ahora Mismo <i data-lucide="rocket" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-slate-950 pt-20 pb-10">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i data-lucide="code-2" class="text-cyan-400 w-8 h-8"></i>
+                        <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
+                            DevFree<span class="text-cyan-400">Academy</span>
+                        </span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">
+                        Democratizando la educación tecnológica. Centralizamos las mejores oportunidades de estudio gratuito con certificación.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500 hover:text-white text-slate-400 transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500 hover:text-white text-slate-400 transition-all"><i data-lucide="monitor" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500 hover:text-white text-slate-400 transition-all"><i data-lucide="users" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">Plataformas</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">Certificados</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">Rutas de Estudio</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">Comunidad</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Contacto</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li>hello@devfreeacademy.com</li>
+                        <li>Madrid, España (Remoto)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/10 text-center md:flex md:justify-between md:text-left items-center">
+                <p class="text-slate-500 text-sm">© 2026 DevFree Academy. Todos los derechos reservados.</p>
+                <div class="flex gap-6 mt-4 md:mt-0 justify-center">
+                    <a href="#" class="text-slate-500 text-sm hover:text-white">Privacidad</a>
+                    <a href="#" class="text-slate-500 text-sm hover:text-white">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Lógica de Scroll para Navbar Sticky
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-slate-900/80', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-4');
+                navbar.classList.remove('bg-transparent', 'py-6');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-6');
+                navbar.classList.remove('bg-slate-900/80', 'backdrop-blur-md', 'border-b', 'border-white/10', 'py-4');
+            }
+        });
+
+        // Lógica de Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        const toggleMenu = () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Actualizar icono al cambiarlo
+        };
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        
+        // Cerrar menú al hacer click en un enlace móvil
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+</body>
+</html>

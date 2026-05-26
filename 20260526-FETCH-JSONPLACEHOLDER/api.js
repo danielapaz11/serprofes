@@ -5,7 +5,7 @@ import { baseURL } from "./config";
 * @param {string}ruta -la ruta final (ej. "/post/1")
 * @param {object}opciones - Configuracion extra (POST, DELETE...)
 */
-export easync function callAPI(ruta,opciones ={}){
+export async function callAPI(ruta,opciones ={}){
     //1. Construimos la URL completa (Base + Ruta)
     const urlCompleta = `${baseURL}${ruta}`;
 

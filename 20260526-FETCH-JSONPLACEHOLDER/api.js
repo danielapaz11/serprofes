@@ -1,4 +1,4 @@
-import { baseURL } from "./config";
+import { baseURL } from "./config.js";
 
 /**callAPI: Nuestro cartero virtual (Cliente Generico), el param 
 
@@ -21,14 +21,14 @@ export async function callAPI(ruta,opciones ={}){
         //4. Verificamos el estado (El servidor respondio,
         //pero igual dijo "404 No encontrado")
         if(!respuesta.ok){
-            throw new Error(`Error HTTP: ${respuesta.status} - ${respuesta.statusText}`);            
+            throw new error(`Error HTTP: ${respuesta.status} - ${respuesta.statusText}`);            
         }
         //5. Traducimos el paquete (JSON) a un objeto que Javascript entienda
         const datos = await respuesta.json();
         return datos;
     } catch(error){
         //6. Si se cae el internet o la url no existe lo atrapamos aqui
-        console.error("Fallo critico en el cartero:",error)
+        console.Error("Fallo critico en el cartero:", error);
         throw error; //Lanzamos el error hacia arriba para que la pantalla no lo muestre
     }
 }
